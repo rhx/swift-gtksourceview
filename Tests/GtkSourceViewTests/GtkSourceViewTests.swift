@@ -1,12 +1,14 @@
 import XCTest
+import CGtkSourceView
 @testable import GtkSourceView
 
 final class GtkSourceViewTests: XCTestCase {
-    func testExample() throws {
-        // XCTest Documentation
-        // https://developer.apple.com/documentation/xctest
-
-        // Defining Test Cases and Test Methods
-        // https://developer.apple.com/documentation/xctest/defining_test_cases_and_test_methods
+    override class func setUp() {
+        usleep(100000) // FIXME: ensure gtk is initialised
     }
+    func testMajorVersion() { XCTAssertEqual(getMajorVersion(), Int(gtk_source_get_major_version())) }
+    func testMinorVersion() { XCTAssertEqual(getMinorVersion(), Int(gtk_source_get_minor_version())) }
+    func testMicroVersion() { XCTAssertEqual(getMicroVersion(), Int(gtk_source_get_micro_version())) }
+    func testInterfaceAge() { XCTAssertEqual(getInterfaceAge(), Int(gtk_source_get_interface_age())) }
+    func testBinaryAge()    { XCTAssertEqual(getBinaryAge(),    Int(gtk_source_get_binary_age()))    }
 }

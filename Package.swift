@@ -23,6 +23,9 @@ let package = Package(
             dependencies: [
                 "CGtkSourceView",
                 .product(name: "Gtk", package: "SwiftGtk"),
+            ],
+            plugins: [
+                .plugin(name: "gir2swift-plugin", package: "gir2swift")
             ]),
         .testTarget(
             name: "GtkSourceViewTests",
