@@ -1,23 +1,31 @@
-// swift-tools-version: 5.9
-// The swift-tools-version declares the minimum version of Swift required to build this package.
+// swift-tools-version: 5.6
 
 import PackageDescription
 
 let package = Package(
-    name: "swift-gtksourceview",
+    name: "GtkSourceView",
     products: [
-        // Products define the executables and libraries a package produces, making them visible to other packages.
         .library(
-            name: "swift-gtksourceview",
-            targets: ["swift-gtksourceview"]),
+            name: "GtkSourceView",
+            targets: ["GtkSourceView"]),
+    ],
+    dependencies: [
+        .package(url: "https://github.com/rhx/gir2swift.git",     branch: "development"),
+        .package(url: "https://github.com/rhx/SwiftGtk.git",      branch: "gtk4-monorepo-development"),
+        .package(url: "https://github.com/apple/swift-docc-plugin", from: "1.0.0"),
     ],
     targets: [
-        // Targets are the basic building blocks of a package, defining a module or a test suite.
-        // Targets can depend on other targets in this package and products from dependencies.
+        .systemLibrary(
+            name: "CGtkSourceView",
+            pkgConfig: "gtksourceview-5"),
         .target(
-            name: "swift-gtksourceview"),
+            name: "GtkSourceView",
+            dependencies: [
+                "CGtkSourceView",
+                .product(name: "Gtk", package: "SwiftGtk"),
+            ]),
         .testTarget(
-            name: "swift-gtksourceviewTests",
-            dependencies: ["swift-gtksourceview"]),
+            name: "GtkSourceViewTests",
+            dependencies: ["GtkSourceView"]),
     ]
 )

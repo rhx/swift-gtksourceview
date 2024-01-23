@@ -1,7 +1,7 @@
 import XCTest
-@testable import swift_gtksourceview
+@testable import GtkSourceView
 
-final class swift_gtksourceviewTests: XCTestCase {
+final class GtkSourceViewTests: XCTestCase {
     func testExample() throws {
         // XCTest Documentation
         // https://developer.apple.com/documentation/xctest
