@@ -3,10 +3,10 @@
 import PackageDescription
 
 let package = Package(
-    name: "GtkSourceView",
+    name: "GtkSource",
     products: [
         .library(
-            name: "GtkSourceView",
+            name: "GtkSource",
             targets: ["GtkSource"]),
     ],
     dependencies: [
