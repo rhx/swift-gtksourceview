@@ -1,5 +1,5 @@
-module CGtkSourceView [system] {
-	header "gtksourceview_bridging.h"
+module CGtkSource [system] {
+	header "gtksource_bridging.h"
 
 	link "gtksourceview-5"
 	link "gtk-4"

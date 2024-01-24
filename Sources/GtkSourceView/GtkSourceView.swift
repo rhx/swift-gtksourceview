@@ -1,3 +1,0 @@
-import CGtkSourceView
-import Gtk
-

@@ -1,5 +1,5 @@
 version: 1
 gir-name: GtkSource-5
 pkg-config: gtksourceview-5
-output-directory: Sources/GtkSourceView
+output-directory: Sources/GtkSource
 alpha-names: true

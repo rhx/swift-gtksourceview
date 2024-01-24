@@ -7,7 +7,7 @@ let package = Package(
     products: [
         .library(
             name: "GtkSourceView",
-            targets: ["GtkSourceView"]),
+            targets: ["GtkSource"]),
     ],
     dependencies: [
         .package(url: "https://github.com/rhx/gir2swift.git",     branch: "development"),
@@ -16,19 +16,19 @@ let package = Package(
     ],
     targets: [
         .systemLibrary(
-            name: "CGtkSourceView",
+            name: "CGtkSource",
             pkgConfig: "gtksourceview-5"),
         .target(
-            name: "GtkSourceView",
+            name: "GtkSource",
             dependencies: [
-                "CGtkSourceView",
+                "CGtkSource",
                 .product(name: "Gtk", package: "SwiftGtk"),
             ],
             plugins: [
                 .plugin(name: "gir2swift-plugin", package: "gir2swift")
             ]),
         .testTarget(
-            name: "GtkSourceViewTests",
-            dependencies: ["GtkSourceView"]),
+            name: "GtkSourceTests",
+            dependencies: ["GtkSource"]),
     ]
 )

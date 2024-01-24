@@ -6,6 +6,7 @@ import CGdkPixbuf
 import CGdk
 import CGsk
 import CGtk
+import CGtkSource
 import GLib
 import GLibObject
 import GIO
