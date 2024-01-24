@@ -9,6 +9,7 @@ BEGIN { depr_init = 0 ; comment = 0 ; slist = 0 ; overr = 0 ;
 /Creates a new ``View``\.$/ { overr = 1 }
 /Creates a `GtkSourceTag`.$/ { overr = 1 ; sub("GtkSourceTag", "`SourceTag`") }
 /Creates a new `GtkSourceMap`.$/ { overr = 1 ; sub("GtkSourceMap", "`SourceMap`") }
+/Creates a new `GtkSourceView`.$/ { overr = 1 ; sub("GtkSourceView", "`SourceView`") }
 /^    @inlinable var [a-z]/ {
 	if (no_fields) {
 		print "#if false"
